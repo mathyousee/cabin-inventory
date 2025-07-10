@@ -1,0 +1,137 @@
+.search-filter {
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 1rem;
+}
+
+.search-section {
+  margin-bottom: 1rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+  min-height: 44px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.item-count {
+  font-size: 14px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.filter-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #666;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  min-height: 36px;
+}
+
+.filter-tab:hover {
+  border-color: #bbb;
+  background: #f8f9fa;
+}
+
+.filter-tab.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+/* Status-specific colors when active */
+.filter-tab.status-buy.active {
+  background: #dc3545;
+  border-color: #dc3545;
+}
+
+.filter-tab.status-bring.active {
+  background: #fd7e14;
+  border-color: #fd7e14;
+}
+
+.filter-tab.status-low.active {
+  background: #ffc107;
+  border-color: #ffc107;
+  color: #000;
+}
+
+.filter-tab.status-enough.active {
+  background: #28a745;
+  border-color: #28a745;
+}
+
+.filter-tab.status-packed.active {
+  background: #6f42c1;
+  border-color: #6f42c1;
+}
+
+@media (max-width: 768px) {
+  .search-filter {
+    padding: 0.75rem;
+  }
+  
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  
+  .item-count {
+    text-align: center;
+  }
+  
+  .filter-tabs {
+    gap: 0.25rem;
+  }
+  
+  .filter-tab {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}

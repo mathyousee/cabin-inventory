@@ -1,0 +1,26 @@
+{
+  "name": "cabin-inventory-api",
+  "version": "1.0.0",
+  "description": "Azure Functions API for Cabin Inventory",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prestart": "npm run build",
+    "start": "func start",
+    "dev": "npm run build && node dist/express-server.js",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@azure/cosmos": "^4.0.0",
+    "@azure/functions": "^4.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^18.x",
+    "typescript": "^4.0.0"
+  }
+}
