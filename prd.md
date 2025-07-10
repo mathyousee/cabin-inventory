@@ -6,11 +6,49 @@
 ### 1. Purpose
 Develop a lightweight, mobile-friendly web application to help users easily track and manage inventory items at a cabin.
 
+Executive Summary
+The Cabin Supply Management System is a mobile-first web application designed for collaborative tracking and management of food and supplies at shared cabins or vacation properties. The system enables multiple users to monitor inventory levels, coordinate shopping trips, and maintain supply adequacy through real-time synchronization and intuitive mobile interfaces.
+
+Product Vision
+To create the most user-friendly and efficient way for cabin users to collaboratively manage supplies, eliminating the guesswork of "what do we need?" and ensuring essential items are always available for a great cabin experience.
+
+
+Cabin visitors face recurring challenges:
+
+Uncertainty about current supply levels before trips
+Duplicate purchases due to poor communication
+Missing essential items that ruin cabin experiences
+Inefficient shopping coordination among multiple users
+Lack of historical data on consumption patterns
+
+Solution Overview
+
+A collaborative supply management platform featuring:
+
+Dual tracking system: Quantity-based (items/units) and percentage-based (levels)
+Action-based organization: Buy, Bring, or Have Enough status per item
+Real-time synchronization across all users
+Mobile-optimized interface for on-the-go management
+Print-friendly shopping lists for store visits
+Secure access control with authentication
+---
+
+
 ---
 
 ### 2. Target Users
-- Cabin owners
-- Family members and guests who visit the cabin
+Primary Users:
+
+Cabin owners and regular visitors
+Vacation rental guests with extended stays
+Family groups managing shared properties
+User Personas:
+
+The Organizer - Plans trips, manages lists, coordinates supplies
+The Shopper - Handles purchasing, needs clear shopping lists
+The Consumer - Uses supplies, updates levels, reports needs
+---
+
 
 ---
 
