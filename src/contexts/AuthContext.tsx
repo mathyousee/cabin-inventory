@@ -25,11 +25,20 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const checkAuthStatus = async () => {
     try {
-      const response = await fetch('/.auth/me');
-      if (response.ok) {
-        const authData = await response.json();
-        if (authData.clientPrincipal) {
-          setUser(authData.clientPrincipal);
+      // Check if we're in development mode (localhost or development build)
+      const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      
+      if (isDevelopment) {
+        // For development, don't automatically log in - wait for user to click login
+        setUser(null);
+      } else {
+        // For production, check Azure Static Web Apps authentication
+        const response = await fetch('/.auth/me');
+        if (response.ok) {
+          const authData = await response.json();
+          if (authData.clientPrincipal) {
+            setUser(authData.clientPrincipal);
+          }
         }
       }
     } catch (error) {
@@ -40,11 +49,33 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   const login = () => {
-    window.location.href = '/.auth/login/github';
+    const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    
+    if (isDevelopment) {
+      // For development, simulate a login by setting the demo user
+      setUser({
+        userId: 'demo-user',
+        userDetails: 'demo@example.com',
+        userRoles: ['authenticated'],
+        claims: [],
+        identityProvider: 'demo'
+      });
+    } else {
+      // For production, redirect to Azure authentication
+      window.location.href = '/.auth/login/github';
+    }
   };
 
   const logout = () => {
-    window.location.href = '/.auth/logout';
+    const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    
+    if (isDevelopment) {
+      // For development, just clear the user
+      setUser(null);
+    } else {
+      // For production, use Azure logout
+      window.location.href = '/.auth/logout';
+    }
   };
 
   const value: AuthContextType = {
